@@ -1,6 +1,11 @@
 package co.com.sofka.roll.dto;
 
-public class RequestDTO {
+import org.springframework.lang.Nullable;
+
+import java.io.Serializable;
+
+public class RequestDTO implements Serializable {
+    @Nullable
     private String name;
 
     public String getName() {

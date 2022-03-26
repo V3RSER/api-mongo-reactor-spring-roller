@@ -3,17 +3,17 @@ package co.com.sofka.roll.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-@Document
+@Document(collection = "rolls")
 public class Roll {
     @Id
     private String id;
     private Date date;
     private String name;
-    private Integer dice1;
-    private Integer dice2;
-    private Integer sum;
+    private ArrayList<Integer> dices;
+    private Integer total;
 
     public String getId() {
         return id;
@@ -39,27 +39,19 @@ public class Roll {
         this.name = name;
     }
 
-    public Integer getDice1() {
-        return dice1;
+    public ArrayList<Integer> getDices() {
+        return dices;
     }
 
-    public void setDice1(Integer dice1) {
-        this.dice1 = dice1;
+    public void setDices(ArrayList<Integer> dices) {
+        this.dices = dices;
     }
 
-    public Integer getDice2() {
-        return dice2;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setDice2(Integer dice2) {
-        this.dice2 = dice2;
-    }
-
-    public Integer getSum() {
-        return sum;
-    }
-
-    public void setSum(Integer sum) {
-        this.sum = sum;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 }
